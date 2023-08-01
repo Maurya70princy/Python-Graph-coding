@@ -1,0 +1,87 @@
+import os 
+import numpy as np
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+a = np.array([1,2,3,4,5,6])
+
+plt.plot(a)
+plt.show()
+
+Day = [1,2,3,7,5,9,7,7]
+Number = [2,8,5,3,4,7,5,5]
+plt.scatter(Day,Number,color="red")
+plt.title("Scatter plot")
+plt.xlabel("Day")
+plt.ylabel("Number")
+plt.show()
+
+a = np.array([1,2,3,4,5])
+b = np.array([4,5,7,8,9])
+c = np.array([2,2,2,2,2])
+
+plt.plot(a, color = 'Green',label='Rent FY20')
+plt.plot(b, color = 'Red',label='AVG Rent')
+plt.plot(c, color = 'Yellow',label='Rent FY19')
+
+plt.title('Rent per Month Summary',fontweight='bold')
+plt.legend(loc='upper left',fontsize=7)
+plt.xlabel('Months')
+plt.ylabel('Rent $')
+
+plt.show()
+
+a = np.arange(30)
+b = np.random.randint(0,45,30)
+
+plt.scatter(a,b)
+plt.colorbar()
+plt.show()
+
+s = np.random.randint(0,100,30)
+b = a + np.random.randint(0,30,30)
+plt.scatter(a,b, c='green')
+plt.colorbar()
+plt.show()
+
+#Bar graph
+
+category = ['Account A', 'Account B', 'Account C']
+revenue = np.array([150,200,300])
+plt.figure(figsize=(10,5))
+plt.bar(range(0,3),revenue)
+plt.xticks(range(0,3),category)
+plt.show()
+
+#Subplot
+
+category = ['Account A', 'Account B', 'Account C']
+revenue = np.array([150,200,300])
+
+plt.figure(figsize=(10,5),dpi=500,facecolor='lightblue')
+
+plt.subplot(131)
+plt.bar(range(0,3),revenue)
+plt.xticks(range(0,3),category)
+
+
+plt.subplot(132)
+plt.plot(range(0,3),revenue, c='blue')
+plt.xticks(range(0,3),category)
+
+plt.subplot(133)
+plt.scatter(range(0,3),revenue, c='blue')
+plt.xticks(range(0,3),category)
+plt.show()
+
+#Histogram
+
+a = np.random.randn(10000) * 10 +  100
+#a(array([101.49898782, 103.13311314,  91.16471096, ..., 106.33911407,
+        95.97326491,  94.21496133]))
+plt.hist(a,5)
+plt.title('Number of Houses per Square M')
+plt.xlabel('Square M Bins')
+plt.ylabel('Number of houses')
+plt.show()
